@@ -55,3 +55,9 @@ GNURadio-based SDR software and flowgraphs for UniClOGS
 * You have to netcat to port 52002 the command you want to send. For example:
    * Turn on the battery: echo "C4F53800000F00E5111801" | xxd -r -p | nc -u 127.0.0.1 52002
    * Turn off the battery: echo "C4F53800000F00E5111800" | xxd -r -p | nc -u 127.0.0.1 52002 
+
+# Docker
+
+* Build docker container: `docker build -t uniclogs-sdr .`
+* Run docker container detached: `docker run -d -p 10015:10015/udp
+  -p 10016:10016/udp -p 10025:10025/udp -v "$(pwd)"/dev:/dev uniclogs-sdr`
